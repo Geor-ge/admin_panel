@@ -1,0 +1,10 @@
+<h1>All Students</h1>
+<% @students.each do |s| %>
+<ul>
+  <li><%= s.rank %></li>
+  <li><%= s.f_name %></li>
+  <li><%= s.l_name %></li>
+  <li><%= s.age %></li>
+  <li><%= s.cohort.name %></li>
+</ul>
+<% end %>
