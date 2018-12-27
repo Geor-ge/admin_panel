@@ -1,1 +1,7 @@
 <h1>Edit Cohorts</h1>
+<%= form_for(@cohort) do |f| %>
+<p><%= f.text_field :name, :placeholder => "Cohort Name" %></p>
+<p><%= f.date_select :start_date, :placeholder => "Start Date"%></p>
+<p><%= f.date_select :end_date, :placeholder => "End Date"%></p>
+<p><%= f.submit 'Edit Cohort' %></p>
+<% end %>

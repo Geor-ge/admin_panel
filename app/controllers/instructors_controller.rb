@@ -17,15 +17,23 @@ class InstructorsController < ApplicationController
   end
 
   def edit
+    @instructor = Instructor.find(params[:id])
   end
 
+  def update
+    @instructor = Instructor.find(params[:id])
+    if @instructor.update(instructor_params)
+      redirect_to '/instructors'
+    end
+  end
+  
   def delete
   end
 
   private
 
   def instructor_params
-    params.require(:instructor).permit(:f_name, :l_name, :age, :salary)
+    params.require(:instructor).permit(:f_name, :l_name, :age, :salary, :cohort_id)
   end
 
 end

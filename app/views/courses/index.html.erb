@@ -1,1 +1,4 @@
 <h1>All Courses</h1>
+<% @courses.each do |c| %>
+<span><%= c.name %></span> --- <span><%= c.total_hours %></span><br><br>
+<% end %>

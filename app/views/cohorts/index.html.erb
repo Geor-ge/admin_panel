@@ -1,4 +1,8 @@
 <h1>All Cohorts</h1>
 <% @cohorts.each do |c| %>
-<p><%= c.name %></p>
+<% if c.instructor != nil %>
+<span><%= c.name %></span> --- <span><%= c.instructor.f_name %></span> <span><%= c.instructor.l_name %></span><br><br>
+<% else %>
+<span><%= c.name %></span>
+<% end %>
 <% end %>

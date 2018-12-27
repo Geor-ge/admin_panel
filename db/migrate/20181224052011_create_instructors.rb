@@ -5,6 +5,7 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :l_name
       t.integer :age
       t.integer :salary
+      t.references :cohort
 
       t.timestamps
     end
