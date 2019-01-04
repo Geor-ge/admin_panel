@@ -1,10 +1,24 @@
 <h1>All Students</h1>
-<% @students.each do |s| %>
-<ul>
-  <li><%= s.rank %></li>
-  <li><%= s.f_name %></li>
-  <li><%= s.l_name %></li>
-  <li><%= s.age %></li>
-  <li><%= s.cohort.name %></li>
-</ul>
-<% end %>
+<%= link_to 'Add Student', new_student_path %>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Rank</th>
+    <th>Cohort</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @students.order('created_at': :desc).each do |s| %>
+  <tr id="<%= s.id %>">
+    <td><%= s.f_name %></td>
+    <td><%= s.l_name %></td>
+    <td><%= s.age %></td>
+    <td><%= s.rank %></td>
+    <td><%= s.cohort.name %></td>
+    <td><%= link_to 'Edit', edit_student_path(s.id) %></td>
+    <td><%= link_to 'Remove', s, method: :delete, remote: true, data: {confirm: "Remove #{s.f_name} #{s.l_name}?"}  %></td>
+  </tr>
+  <% end %>
+</table>

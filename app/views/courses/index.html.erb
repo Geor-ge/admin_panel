@@ -1,4 +1,18 @@
 <h1>All Courses</h1>
-<% @courses.each do |c| %>
-<span><%= c.name %></span> --- <span><%= c.total_hours %></span><br><br>
-<% end %>
+
+<table>
+  <tr>
+    <th>Course Name</th>
+    <th>Total Hours</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @courses.order(name: :asc).each do |c| %>
+  <tr id="<%= c.id %>">
+    <td><%= c.name %></td>
+    <td><%= c.total_hours %></td>
+    <td><%= link_to 'Edit', edit_course_path(c.id) %></td>
+    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Remove #{c.name}?"}  %></td>
+  </tr>
+  <% end %>
+</table>

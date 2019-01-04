@@ -1,8 +1,18 @@
 <h1>All Cohorts</h1>
-<% @cohorts.each do |c| %>
-<% if c.instructor != nil %>
-<span><%= c.name %></span> --- <span><%= c.instructor.f_name %></span> <span><%= c.instructor.l_name %></span><br><br>
-<% else %>
-<span><%= c.name %></span>
-<% end %>
-<% end %>
+
+<table>
+  <tr>
+    <th>Cohort Name</th>
+    <th>Instructor</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @cohorts.order(name: :asc).each do |c| %>
+  <tr id="<%= c.id %>">
+    <td><%= c.name %></td>
+    <td><%= c.instructor.f_name %> <%= c.instructor.l_name %></td>
+    <td><%= link_to 'Edit', edit_cohort_path(c.id) %></td>
+    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Remove #{c.name}?"}  %></td>
+  </tr>
+  <% end %>
+</table>

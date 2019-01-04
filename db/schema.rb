@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2018_12_26_230518) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_cohorts_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_12_26_230518) do
     t.string "l_name"
     t.integer "age"
     t.integer "salary"
+    t.string "rank"
     t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

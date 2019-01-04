@@ -26,14 +26,20 @@ class InstructorsController < ApplicationController
       redirect_to '/instructors'
     end
   end
-  
-  def delete
+
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    if @instructor.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   private
 
   def instructor_params
-    params.require(:instructor).permit(:f_name, :l_name, :age, :salary, :cohort_id)
+    params.require(:instructor).permit(:f_name, :l_name,:age, :rank, :salary, :cohort_id)
   end
 
 end

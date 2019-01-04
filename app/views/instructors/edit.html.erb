@@ -1,10 +1,10 @@
 <h1>Edit Instructor Info</h1>
-
 <%= form_for(@instructor) do |f| %>
 <p><%= f.text_field :f_name, :placeholder => "First Name" %></p>
-<p><%= f.text_field :l_name, :placeholder => "Last Name"  %></p>
+<p><%= f.text_field :l_name, :placeholder => "Last Name" %></p>
 <p><%= f.number_field :age, :placeholder => "Age"  %></p>
+<p><%= f.select(:rank, ["White","Blue","Purple","Brown"]) %></p>
 <p><%= f.number_field :salary, :placeholder => "Salary"  %></p>
-<p><%= f.number_field :cohort_id, :placeholder => "Cohort ID"  %></p>
+<p><%= f.collection_select(:cohort_id, Cohort.all, :id, :name) %></p>
 <p><%= f.submit 'Edit Instructor' %></p>
 <% end %>

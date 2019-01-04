@@ -1,11 +1,11 @@
 class Student < ApplicationRecord
-  belongs_to :cohort
+  belongs_to :cohort, optional: true
   before_save{self.f_name = f_name.capitalize}
   before_save{self.l_name = l_name.capitalize}
   before_save{self.rank = rank.capitalize}
   validates(:f_name, presence: true)
   validates(:l_name, presence: true)
-  validates(:age, presence: true)
+  validates(:age, presence: true, numericality: {greater_than: 0, less_than: 150})
   validates(:rank, presence: true)
 
 end
