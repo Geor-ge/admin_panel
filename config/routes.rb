@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root 'cohorts#index'
+
+  root 'pages#home'
+
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#logout'
   resources :students
   resources :instructors
   resources :courses

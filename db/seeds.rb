@@ -1,4 +1,4 @@
-ranks = ["Blue", "Purple", "Brown", "Black"]
+ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
 
 Cohort.create(name: "Dragon's Den", start_date: "2019-01-03", end_date: "2019-05-04")
 Cohort.create(name: "Chan's Clan", start_date: "2019-01-03", end_date: "2019-05-04")
@@ -16,8 +16,9 @@ Course.create(name: "Kickboxing", total_hours: 1000)
 Course.create(name: "Wudang Sword", total_hours: 1000)
 Course.create(name: "18 Shaolin Weapons", total_hours: 1000)
 Course.create(name: "Grappling", total_hours: 1000)
+Admin.create(user_name: "admin", password: "password")
 
 
-100.times do
+50.times do
   Student.create(f_name: Faker::Name.first_name, l_name: Faker::Name.last_name, age: "#{rand(1..149)}", rank: "#{ranks[rand(0..2)]}", cohort_id: "#{rand(1..4)}")
 end

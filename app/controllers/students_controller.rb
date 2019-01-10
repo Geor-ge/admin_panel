@@ -2,16 +2,26 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @student = Student.new
+    @student.save
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
   end
 
   def new
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @student = Student.new
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
   end
 
   def create
     @student = Student.new(student_params)
-    if @student.valid?
-      @student.save
+    if @student.save
+      flash[:success] = "Student added to roster."
       redirect_to '/students'
     else
       render 'new'
@@ -20,8 +30,13 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
     @student = Student.find(params[:id])
   end
+
 
   def update
     @student = Student.find(params[:id])
@@ -42,6 +57,7 @@ end
   end
 
   private
+
 
   def student_params
     params.require(:student).permit(:f_name, :l_name, :age, :rank, :cohort_id)

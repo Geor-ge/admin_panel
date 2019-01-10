@@ -1,10 +1,20 @@
 class CohortsController < ApplicationController
 
+
   def index
     @cohorts = Cohort.all
+    @cohort = Cohort.new
+    @cohort.save
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
   end
 
+
   def new
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @cohort = Cohort.new
   end
 
@@ -16,6 +26,9 @@ class CohortsController < ApplicationController
   end
 
   def edit
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @cohort = Cohort.find(params[:id])
   end
 
@@ -29,8 +42,9 @@ class CohortsController < ApplicationController
   end
 
   def destroy
-    @cohort = Cohort.find(params[:id])
-    if @cohort.destroy
+    cohort = Cohort.find(params[:id])
+    instructor = cohort.instructor
+    if cohort.destroy
       respond_to do |format|
         format.js
       end
@@ -39,6 +53,6 @@ class CohortsController < ApplicationController
 
   private
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date)
+    params.require(:cohort).permit(:name, :start_date, :end_date, :course_id)
   end
 end

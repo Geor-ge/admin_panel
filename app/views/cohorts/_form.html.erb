@@ -1,0 +1,4 @@
+<p><%= f.text_field :name, :placeholder => "Cohort Name" %></p>
+<p><%= f.date_select :start_date, :placeholder => "Start Date"%></p>
+<p><%= f.date_select :end_date, :placeholder => "End Date"%></p>
+<p><%= f.collection_select(:course_id, Course.all, :id, :name, {prompt: 'Select a Course'}) %></p>

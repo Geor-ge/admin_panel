@@ -1,18 +1,28 @@
-<h1>All Cohorts</h1>
-
-<table>
-  <tr>
+<h1 class="text-center">Cohorts</h1>
+<a class="btn btn-success float-right" href="/cohorts/new">Add Cohort</a><br><br>
+<table class='table table-striped table-bordered table-hover text-center''>
+  <tr class="thead-dark">
     <th>Cohort Name</th>
     <th>Instructor</th>
     <th></th>
     <th></th>
   </tr>
-  <% @cohorts.order(name: :asc).each do |c| %>
+  <%= form_for (@cohort) do |f| %>
+  <td><%= f.text_field :name %></td>
+  <td><%= f.date_field :start_date %></td>
+  <td><%= f.date_field :end_date %></td>
+  <td><%= f.submit %></td>
+  <% end %>
+  <% @cohorts.order(created_at: :desc).each do |c| %>
   <tr id="<%= c.id %>">
     <td><%= c.name %></td>
+    <% if c.instructor != nil %>
     <td><%= c.instructor.f_name %> <%= c.instructor.l_name %></td>
+    <% else %>
+    <td>N/A</td>
+    <% end %>
     <td><%= link_to 'Edit', edit_cohort_path(c.id) %></td>
-    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Remove #{c.name}?"}  %></td>
+    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Click OK to remove #{c.name}"}  %></td>
   </tr>
   <% end %>
 </table>

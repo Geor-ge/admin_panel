@@ -1,7 +1,6 @@
 <h1>Add a Cohort</h1>
+<%= link_to 'Go Back', cohorts_path %>
 <%= form_for(@cohort) do |f| %>
-<p><%= f.text_field :name, :placeholder => "Cohort Name" %></p>
-<p><%= f.date_select :start_date, :placeholder => "Start Date"%></p>
-<p><%= f.date_select :end_date, :placeholder => "End Date"%></p>
+<%= render partial: 'form', locals: {f: f} %>
 <p><%= f.submit 'Add Cohort' %></p>
 <% end %>

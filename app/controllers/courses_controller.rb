@@ -1,10 +1,19 @@
 class CoursesController < ApplicationController
 
+
   def index
     @courses = Course.all
+    @course = Course.new
+    @course.save
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
   end
 
   def new
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.new
   end
 
@@ -16,12 +25,15 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.find(params[:id])
   end
 
   def update
     @course = Course.find(params[:id])
-    if @course.update(course_params)
+    if @course.update_attributes(course_params)
       redirect_to '/courses'
     end
   end

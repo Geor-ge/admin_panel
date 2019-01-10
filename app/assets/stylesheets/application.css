@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   background-color: RGBA(255, 250, 255, .7);
+ }
+ #student-table{
+   margin: -5%;
+ }
+ #instructor-table{
+   margin-left: -10.5%;
+ }
+
+.nav{
+  background-color: #567EBB;
+}
+.nav-link{
+  color: #eee;
+}
+.nav-link:hover{
+  color: #567EBB;;
+}
+.nav-item:hover{
+  background-color: #eee;
+}
+
+#login-button{
+}
+#login-form{
+  position: relative;
+  top: 25%;
+}

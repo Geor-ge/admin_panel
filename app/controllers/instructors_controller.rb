@@ -1,11 +1,22 @@
 class InstructorsController < ApplicationController
 
+
   def index
     @instructors = Instructor.all
+    @instructor = Instructor.new
+    @instructor.save
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
   end
 
   def new
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.new
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
   end
 
   def create
@@ -17,7 +28,11 @@ class InstructorsController < ApplicationController
   end
 
   def edit
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.find(params[:id])
+    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
   end
 
   def update
