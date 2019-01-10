@@ -36,7 +36,13 @@
   background-color: #eee;
 }
 
-#login-button{
+#login-button {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  width: 25%;
+  height: auto;
+  font-size: 3em;
 }
 #login-form{
   position: relative;
