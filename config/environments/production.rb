@@ -91,4 +91,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  if ENV['RACK_ENV']
+   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  else
+   set :database, {adapter: "sqlite3", database: "article.sqlite3"}
+  end
+
 end
