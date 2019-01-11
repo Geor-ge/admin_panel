@@ -20,12 +20,6 @@ end
 
 Raven.configure do |config|
   config.dsn = 'https://f9ac1d14b22b4da9aa5cbc2a436a772d:3f2916ab304d42d486d63b649b58437f@sentry.io/1369113'
-end
-
-# in your application.rb:
-config.filter_parameters << :password
-
-# in an initializer, like sentry.rb
-Raven.configure do |config|
+  config.filter_parameters << :password
   config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
 end
