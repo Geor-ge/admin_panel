@@ -98,4 +98,9 @@ Rails.application.configure do
    set :database, {adapter: "sqlite3", database: "article.sqlite3"}
   end
 
+
+  Raven.configure do |config|
+    config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
+  end
+
 end
