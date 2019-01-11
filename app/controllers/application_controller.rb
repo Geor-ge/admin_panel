@@ -9,5 +9,3 @@
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
 end
-
-end
