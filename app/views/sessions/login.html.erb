@@ -1,9 +1,11 @@
 <div id="login-form" class=" row justify-content-center align-items-center">
-<p><%= form_tag('/login', method: 'post') do %></p>
-<p><%= text_field_tag (:user_name) %></p>
-<p><%= label_tag(:user_name, 'User Name') %></p>
-<p><%= password_field_tag (:password) %></p>
-<p><%= label_tag(:password, 'Password') %></p>
-<p><%= submit_tag 'Login' %></p>
-<% end %>
+  <div class="col justify-content-center align-self-center">
+    <p><%= form_tag('/login', method: 'post') do %></p>
+    <p><%= text_field_tag (:user_name, :placeholder => 'User Name') %></p>
+    <p><%= label_tag(:user_name, 'User Name') %></p>
+    <p><%= password_field_tag (:password) %></p>
+    <p><%= label_tag(:password, 'Password') %></p>
+    <p><%= submit_tag 'Login' %></p>
+    <% end %>
+  </div>
 </div>

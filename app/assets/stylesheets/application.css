@@ -45,6 +45,12 @@
   font-size: 3em;
 }
 #login-form{
+  border: 5px solid #567EBB;
+  border-radius: 10px;
+  height: 100%;
+  background-color: #eee;
+  width: 400px;
   position: relative;
-  top: 25%;
+  top: 50%;
+  color: #567EBB;
 }
