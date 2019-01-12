@@ -2,11 +2,11 @@ class CoursesController < ApplicationController
 
 
   def index
-    @courses = Course.all
-    @course = Course.new
-    @course.save
     if session[:user_id] == nil
       redirect_to '/login'
+    else
+      @courses = Course.all
+      @course = Course.new
     end
   end
 

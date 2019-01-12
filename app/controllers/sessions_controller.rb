@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     if session[:user_id] != nil
       redirect_to '/cohorts'
     end
-    # login form
   end
 
 

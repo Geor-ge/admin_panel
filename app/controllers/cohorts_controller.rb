@@ -2,12 +2,12 @@ class CohortsController < ApplicationController
 
 
   def index
-    @cohorts = Cohort.all
-    @cohort = Cohort.new
-    @cohort.save
     if session[:user_id] == nil
       redirect_to '/login'
-    end
+    else
+     @cohorts = Cohort.all
+     @cohort = Cohort.new
+  end
   end
 
 

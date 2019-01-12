@@ -10,17 +10,17 @@
   </head>
 
   <body>
-      <% if session[:user_id] %>
-      <nav>
-        <ul class='nav shadow justify-content-end'>
-          <li class='nav-item'><a class='nav-link' href="/cohorts">Cohorts</a></li>
-          <li class='nav-item'><a class='nav-link' href="/courses">Courses</a></li>
-          <li class='nav-item'><a class='nav-link' href="/instructors">Instructors</a></li>
-          <li class='nav-item'><a class='nav-link' href="/students">Students</a></li>
-          <li class='nav-item'><a class='nav-link' href="/logout">Logout</a></li>
-        </ul>
-      <% end %>
+    <% if session[:user_id] != nil %>
+    <nav>
+      <ul class='nav shadow justify-content-end'>
+        <li class='nav-item'><%= link_to 'Cohorts', cohorts_path, class: 'nav-link'%></li>
+        <li class='nav-item'><%= link_to 'Courses', courses_path, class: 'nav-link'%></li>
+        <li class='nav-item'><%= link_to 'Instructors', instructors_path, class: 'nav-link'%></li>
+        <li class='nav-item'><%= link_to 'Students', students_path, class: 'nav-link'%></li>
+        <li class='nav-item'><%= link_to 'Logout', '/logout', class: 'nav-link'%></li>
     </nav>
+    <% end %>
+
     <div class="container">
     <%= yield %>
     </div>

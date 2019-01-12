@@ -2,13 +2,13 @@ class InstructorsController < ApplicationController
 
 
   def index
-    @instructors = Instructor.all
-    @instructor = Instructor.new
-    @instructor.save
-    @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
     if session[:user_id] == nil
       redirect_to '/login'
-    end
+    else
+     @instructors = Instructor.all
+     @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
+     @instructor = Instructor.new
+   end
   end
 
   def new

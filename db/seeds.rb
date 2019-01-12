@@ -19,6 +19,6 @@ Course.create(name: "Grappling", total_hours: 1000)
 Admin.create(user_name: "admin", password: "password")
 
 
-50.times do
+20.times do
   Student.create(f_name: Faker::Name.first_name, l_name: Faker::Name.last_name, age: "#{rand(1..149)}", rank: "#{ranks[rand(0..2)]}", cohort_id: "#{rand(1..4)}")
 end
