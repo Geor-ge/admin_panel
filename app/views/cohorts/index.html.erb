@@ -7,6 +7,7 @@
     <th>End Date</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <%= form_for (@cohort) do |f| %>
   <td><%= f.text_field :name %></td>
@@ -19,8 +20,9 @@
     <td><%= c.name %></td>
     <td><%= c.start_date %></td>
     <td><%= c.end_date %></td>
-    <td><%= link_to 'Edit', edit_cohort_path(c.id) %></td>
     <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Click OK to remove #{c.name}"}  %></td>
+    <td><%= link_to 'Edit', edit_cohort_path(c.id) %></td>
+    <td><%= link_to 'Show', c, class: "card-link" %></td>
   </tr>
   <% end %>
 </table>

@@ -1,5 +1,4 @@
-<h1>Edit Cohorts</h1>
-<%= link_to 'Go Back', cohorts_path %>
+<h3><%= @cohort.name %></h3>
 <%= form_for(@cohort) do |f| %>
 <%= render partial: 'form', locals: {f: f} %>
 <p><%= f.submit 'Edit Cohort' %></p>

@@ -29,6 +29,10 @@ class StudentsController < ApplicationController
 
   end
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
   def edit
     if session[:user_id] == nil
       redirect_to '/login'
@@ -41,7 +45,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     if @student.update(student_params)
-      redirect_to '/students'
+      redirect_to @student
     else
       render 'edit'
   end
@@ -53,6 +57,7 @@ end
       respond_to do |format|
         format.js
       end
+      redirect_to '/students'
     end
   end
 

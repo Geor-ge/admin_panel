@@ -27,6 +27,10 @@ class InstructorsController < ApplicationController
 
   end
 
+  def show
+    @instructor = Instructor.find(params[:id])
+  end
+
   def edit
     if session[:user_id] == nil
       redirect_to '/login'
@@ -48,6 +52,7 @@ class InstructorsController < ApplicationController
       respond_to do |format|
         format.js
       end
+      redirect_to '/instructors'
     end
   end
 

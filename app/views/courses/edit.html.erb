@@ -1,5 +1,4 @@
-<h1>Edit Course</h1>
-<%= link_to 'Go Back', courses_path %>
+<h3><%= @course.name %></h3>
 <%= form_for(@course) do |f| %>
 <%= render partial: 'form', locals: {f: f} %>
 <p><%= f.submit 'Edit Course' %></p>

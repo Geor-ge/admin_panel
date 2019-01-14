@@ -1,0 +1,33 @@
+<div class="row">
+
+</div>
+<div class="row">
+  <div class="col-6">
+    <div id="cohort-card" class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            <h5><%= @cohort.name %></h5>
+            <p><%= @cohort.instructor.f_name %> <%= @cohort.instructor.l_name %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Start Date: <%= @cohort.start_date %></li>
+            <li class="list-group-item">End Date: <%= @cohort.end_date %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            Students
+          </div>
+          <ul class="list-group list-group-flush">
+            <% @cohort.students.each do |s| %>
+            <li class="list-group-item"><%= s.f_name %> <%= s.l_name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

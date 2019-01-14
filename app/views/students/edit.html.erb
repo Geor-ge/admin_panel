@@ -1,5 +1,4 @@
-<h1>Edit Student Info</h1>
-<%= link_to 'Go Back', students_path %>
+<h3><%= "#{@student.f_name} #{@student.l_name}" %></h3>
 <%= form_for @student do |f| %>
 <%= render partial: 'form', locals: {f: f} %>
 <p><%= f.submit 'Edit Student' %></p>

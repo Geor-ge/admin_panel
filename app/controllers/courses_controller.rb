@@ -24,6 +24,10 @@ class CoursesController < ApplicationController
     end
   end
 
+  def show
+    @course = Course.find(params[:id])
+  end
+
   def edit
     if session[:user_id] == nil
       redirect_to '/login'
@@ -44,6 +48,7 @@ class CoursesController < ApplicationController
       respond_to do |format|
         format.js
       end
+      redirect_to '/courses'
     end
   end
 

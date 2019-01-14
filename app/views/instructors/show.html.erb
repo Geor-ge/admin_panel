@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= @instructor.f_name %> <%= @instructor.l_name %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @instructor.rank %></h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">AGE: <%= @instructor.age %></li>
+        <li class="list-group-item">COHORT: <%= @instructor.cohort.name %></li>
+        <li class="list-group-item">SALARY: <%= number_to_currency(@instructor.salary, precisiom: 0) %></li>
+      </ul>
+      <div class="card-body">
+        <%= link_to 'Edit', edit_instructor_path, class: "card-link" %>
+        <%= link_to 'Remove Instructor', @instructor, class: "card-link", method: :delete, remote: true, data: {confirm: "Click OK to remove #{@instructor.f_name} #{@instructor.l_name}"}  %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
