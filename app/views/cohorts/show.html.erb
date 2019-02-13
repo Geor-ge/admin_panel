@@ -1,7 +1,4 @@
-<div class="row">
-
-</div>
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-6">
     <div id="cohort-card" class="card-group">
       <div class="card">
@@ -12,9 +9,8 @@
             <p><%= @cohort.instructor.f_name %> <%= @cohort.instructor.l_name %></p>
             <% end %>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Start Date: <%= @cohort.start_date %></li>
-            <li class="list-group-item">End Date: <%= @cohort.end_date %></li>
+            <p>Start Date: <%= @cohort.start_date %></p>
+            <p>End Date: <%= @cohort.end_date %></p>
           </ul>
         </div>
       </div>
@@ -24,11 +20,9 @@
           <div class="card-header">
             Students
           </div>
-          <ul class="list-group list-group-flush">
             <% @cohort.students.each do |s| %>
-            <li class="list-group-item"><%= s.f_name %> <%= s.l_name %></li>
+            <%= s.f_name %> <%= s.l_name %>
             <% end %>
-          </ul>
         </div>
       </div>
       <% end %>

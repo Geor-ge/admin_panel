@@ -18,6 +18,9 @@ class CoursesController < ApplicationController
   end
 
   def create
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.new(course_params)
     if @course.save
       redirect_to '/courses'
@@ -25,6 +28,9 @@ class CoursesController < ApplicationController
   end
 
   def show
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.find(params[:id])
   end
 
@@ -36,6 +42,9 @@ class CoursesController < ApplicationController
   end
 
   def update
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.find(params[:id])
     if @course.update_attributes(course_params)
       redirect_to '/courses'
@@ -43,6 +52,9 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @course = Course.find(params[:id])
     if @course.destroy
       respond_to do |format|
