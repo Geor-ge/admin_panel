@@ -1,21 +1,18 @@
 <div class="row justify-content-center">
   <div class="col-6">
     <div id="cohort-card" class="card-group">
-      <div class="card">
+      <div class="card text-center">
         <div class="card-body">
-          <div class="card-header">
             <h5><%= @cohort.name %></h5>
             <% if @cohort.instructor != nil %>
             <p><%= @cohort.instructor.f_name %> <%= @cohort.instructor.l_name %></p>
             <% end %>
-          </div>
             <p>Start Date: <%= @cohort.start_date %></p>
             <p>End Date: <%= @cohort.end_date %></p>
-          </ul>
         </div>
       </div>
       <% if @cohort.students != nil %>
-      <div class="card">
+      <div class="card text-center">
         <div class="card-body">
           <div class="card-header">
             Students
