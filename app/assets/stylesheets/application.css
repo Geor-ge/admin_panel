@@ -14,7 +14,15 @@
  *= require_self
  */
  body{
-   background-color: RGBA(255, 250, 255, .7);
+  font-family: 'Share Tech Mono', monospace;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0,1);
+  background-image: url(retro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
  }
  #student-table{
    margin: -5%;
@@ -24,17 +32,18 @@
  }
 
 .nav{
-  background-color: #567EBB;
+  background-color: rgba(24,202,230,.7);
+
 }
 .nav-link{
-  color: #eee;
+  color: #FFF;
+  font-size: 1.125em;
 }
+
 .nav-link:hover{
-  color: #567EBB;;
+  color: #fff;
 }
-.nav-item:hover{
-  background-color: #eee;
-}
+
 
 #login-button {
   position: absolute;
@@ -55,4 +64,20 @@
   top: 100px;
   left: 350px;
   color: #fff;
+}
+
+.card{
+  margin-top: 25%;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  background-color: rgba(0,0,0,.7);
+  color: #FFF;
+  text-shadow: 0px 0px 30px rgb(111,195,223);
+  border: 3px solid rgba(24,202,230,.8);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(111,195,223,1);
+  font-size: 1.25em;
+  overflow: hidden;
+  z-index: 5;
 }

@@ -1,13 +1,13 @@
-<div class="row">
+<div class="row align-self-center justify-content-center">
   <div class="col-4">
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title"><%= @student.f_name %> <%= @student.l_name %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= @student.rank %></h6>
+        <h6 class="card-subtitle mb-2"><%= @student.rank %></h6>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">AGE: <%= @student.age %></li>
-        <li class="list-group-item">COHORT: <%= @student.cohort.name %></li>
+        <p>AGE: <%= @student.age %></p>
+        <p>COHORT: <%= @student.cohort.name %></p>
       </ul>
       <div class="card-body">
         <%= link_to 'Edit', edit_student_path, class: "card-link" %>
