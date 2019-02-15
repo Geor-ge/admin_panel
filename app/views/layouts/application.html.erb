@@ -14,11 +14,11 @@
     <% if session[:user_id] != nil %>
     <nav>
       <ul class='nav shadow justify-content-end'>
-        <li class='nav-item'><%= link_to 'Cohorts', cohorts_path, class: 'nav-link'%></li>
-        <li class='nav-item'><%= link_to 'Courses', courses_path, class: 'nav-link'%></li>
-        <li class='nav-item'><%= link_to 'Instructors', instructors_path, class: 'nav-link'%></li>
-        <li class='nav-item'><%= link_to 'Students', students_path, class: 'nav-link'%></li>
-        <li class='nav-item'><%= link_to 'Logout', '/logout', class: 'nav-link'%></li>
+        <li class='nav-item'><a href="/cohorts" class="nav-link" data-turbolinks="false">Cohorts</a></li>
+        <li class='nav-item'><a href="/courses" class="nav-link" data-turbolinks="false">Courses</a></li>
+        <li class='nav-item'><a href="/instructors" class="nav-link" data-turbolinks="false">Instructors</a></li>
+        <li class='nav-item'><a href="/students" class="nav-link" data-turbolinks="false">Students</a></li>
+        <li class='nav-item'><a href="/logout" class="nav-link" data-turbolinks="false">Logout</a></li>
     </nav>
     <% end %>
 

@@ -26,11 +26,14 @@
   color: #FFF;
  }
 
- #student-table{
-   margin: -5%;
+ nav a{
+   color: #FFF;
+   text-decoration: none;
  }
- #instructor-table{
-   margin-left: -10.5%;
+ nav a:hover{
+   text-shadow: 0px 0px 10px #000;
+   color: #FFF;
+   text-decoration: none;
  }
 
 .nav{
@@ -41,9 +44,8 @@
   color: #FFF;
   font-size: 1.25em;
 }
-
 .nav-link:hover{
-  text-shadow: 0px 0px 5px #050D10;
+  text-shadow: 0px 0px 10px #050D10;
   color: #FFF;
 }
 
@@ -57,27 +59,37 @@
   font-size: 3em;
 }
 #login-form{
-  font-weight: bold;
-  border: 5px solid #567EBB;
-  border-radius: 10px;
-  height: 350px ;
-  background-color: #567EBB;
-  width: 350px;
-  position: relative;
-  top: 100px;
-  left: 350px;
+  margin-top: 50px;
+  padding: 15px;
+  height: auto;
+  width: 25%;
+  background-color: rgba(0,0,0,.8);
+  color: #FFF;
+  text-shadow: 0px 0px 10px rgb(111,195,223);
+  border: 3px solid rgba(24,202,230,1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #FFF;
+}
+#login-form input{
+  border: 3px solid rgba(24,202,230,.8);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(111,195,223);
+  background-color: rgba(0,0,0,0);
   color: #FFF;
 }
 
 .table{
   border: 3px solid rgba(24,202,230,.8);
-  border-radius: 5px;
   box-shadow: 0px 0px 5px #FFF;
   background-color: rgba(12,20,31,.8);
 }
+.table a{
+  color: rgb(255,255,255);
+  text-shadow: 0px 0px 5px rgb(223,116,12);
+  text-decoration: none;
+}
 tr:hover{
-  background-color: rgba(111,195,223, 1);
-  text-shadow: 0px 0px 10px #050D10;
+  background-color: rgba(111,195,223, .7);
 }
 
 .card{
@@ -87,11 +99,15 @@ tr:hover{
   height: auto;
   background-color: rgba(0,0,0,.8);
   color: #FFF;
-  text-shadow: 0px 0px 10px rgb(111,195,223);
+  text-shadow: 0px 0px 5px rgb(24,202,230);
   border: 3px solid rgba(24,202,230,.8);
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #FFF;
+  box-shadow: 0px 0px 10px #FFF;
   font-size: 1.25em;
-  overflow: hidden;
   z-index: 5;
+  opacity: 1;
+}
+.card a{
+  color: rgb(255,255,255);
+  text-shadow: 0px 0px 5px rgb(223,116,12);
 }

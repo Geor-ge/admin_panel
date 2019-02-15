@@ -1,41 +1,39 @@
 <h1 class="text-center">Students</h1>
-<a class="btn btn-success float-right" href="/students/new">Add Student</a>
-<br><br>
-<table id="student-table" class='table table-sm table-bordered text-center'>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Age</th>
-    <th>Rank</th>
-    <th>Cohort</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr>
-    <%= form_for (@student) do |f| %>
-    <td><%= f.text_field :f_name %></td>
-    <td><%= f.text_field :l_name %></td>
-    <td><%= f.number_field :age %></td>
-    <td><%= f.select(:rank, @ranks.each, {prompt: 'Select Rank'})  %></td>
-    <td><%= f.collection_select(:cohort_id, Cohort.all, :id, :name, {prompt: 'Select Cohort'}) %></td>
-    <td><%= f.submit %></td>
+<div class="row justify-content-center">
+  <table class='table table-sm table-bordered text-center'>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Rank</th>
+      <th>Cohort</th>
+      <th colspan="3"></th>
+    </tr>
+    <tr>
+      <%= form_for (@student) do |f| %>
+      <td><%= f.text_field :f_name %></td>
+      <td><%= f.text_field :l_name %></td>
+      <td><%= f.number_field :age %></td>
+      <td><%= f.select(:rank, @ranks.each, {prompt: 'Select Rank'})  %></td>
+      <td><%= f.collection_select(:cohort_id, Cohort.all, :id, :name, {prompt: 'Select Cohort'}) %></td>
+      <td colspan="3"><%= f.submit 'Add Student' %></td>
+      <% end %>
+    </tr>
+    <% @students.order('created_at': :desc).each do |s| %>
+    <tr id="<%= s.id %>">
+      <td><%= s.f_name %></td>
+      <td><%= s.l_name %></td>
+      <td><%= s.age %></td>
+      <td><%= s.rank %></td>
+      <% if s.cohort != nil %>
+      <td><%= s.cohort.name %></td>
+      <% else %>
+      <td>N/A</td>
+      <% end %>
+      <td><%= link_to 'Remove', s, method: :delete, remote: true, data: {confirm: "Click OK to remove #{s.f_name} #{s.l_name}"}  %></td>
+      <td><%= link_to 'Edit', edit_student_path(s.id) %></td>
+      <td><%= link_to 'Show', s %></td>
+    </tr>
     <% end %>
-  </tr>
-  <% @students.order('created_at': :desc).each do |s| %>
-  <tr id="<%= s.id %>">
-    <td><%= s.f_name %></td>
-    <td><%= s.l_name %></td>
-    <td><%= s.age %></td>
-    <td><%= s.rank %></td>
-    <% if s.cohort != nil %>
-    <td><%= s.cohort.name %></td>
-    <% else %>
-    <td>N/A</td>
-    <% end %>
-    <td><%= link_to 'Remove', s, method: :delete, remote: true, data: {confirm: "Click OK to remove #{s.f_name} #{s.l_name}"}  %></td>
-    <td><%= link_to 'Edit', edit_student_path(s.id) %></td>
-    <td><%= link_to 'Show', s %></td>
-  </tr>
-  <% end %>
-</table>
+  </table>
+</div>

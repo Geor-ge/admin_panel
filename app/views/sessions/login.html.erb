@@ -1,4 +1,5 @@
-<div id="login-form" class=" row justify-content-center align-items-center">
+  <div class="row justify-content-center">
+    <div id="login-form">
     <p><%= form_tag('/login', method: 'post') do %></p>
     <p><%= text_field_tag (:user_name) %></p>
     <p><%= label_tag(:user_name, 'User Name') %></p>

@@ -1,28 +1,27 @@
 <h1 class="text-center">Cohorts</h1>
-<a class="btn btn-success float-right" href="/cohorts/new">Add Cohort</a><br><br>
+<div class="row justify-cntent-center">
 <table class='table table-bordered text-center''>
-  <tr class="thead">
+  <tr>
     <th>Cohort Name</th>
     <th>Start Date</th>
     <th>End Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3"></th>
   </tr>
   <%= form_for (@cohort) do |f| %>
   <td><%= f.text_field :name %></td>
   <td><%= f.date_field :start_date %></td>
   <td><%= f.date_field :end_date %></td>
-  <td><%= f.submit %></td>
+  <td colspan="3"><%= f.submit 'Add Cohort'%></td>
   <% end %>
   <% @cohorts.order(created_at: :desc).each do |c| %>
   <tr id="<%= c.id %>">
     <td><%= c.name %></td>
     <td><%= c.start_date %></td>
     <td><%= c.end_date %></td>
-    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Click OK to remove #{c.name}"}  %></td>
+    <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Click OK to remove #{c.name}"} %></td>
     <td><%= link_to 'Edit', edit_cohort_path(c.id) %></td>
     <td><%= link_to 'Show', c, class: "card-link" %></td>
   </tr>
   <% end %>
 </table>
+</div>
