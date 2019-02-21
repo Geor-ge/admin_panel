@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-6">
+  <div class="col-8">
     <div id="cohort-card" class="card-group">
       <div class="card text-center">
         <div class="card-body">
@@ -9,6 +9,8 @@
             <% end %>
             <p>Start Date: <%= @cohort.start_date %></p>
             <p>End Date: <%= @cohort.end_date %></p>
+            <%= link_to 'Edit', edit_cohort_path, class: 'card-link' %>
+            <%= link_to 'Remove Cohort', @cohort, class: 'card-link', method: :delete, remote: true, data: {confirm: "Click OK to remove #{@cohort.name}"} %>
         </div>
       </div>
       <% if @cohort.students != nil %>
@@ -18,7 +20,7 @@
             Students
           </div>
             <% @cohort.students.each do |s| %>
-            <%= s.f_name %> <%= s.l_name %>
+            <a href="/students/<%=s.id%>"><span><%= s.f_name %> <%= s.l_name %></span></a><br>
             <% end %>
         </div>
       </div>

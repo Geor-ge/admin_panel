@@ -1,3 +1,4 @@
+
 <div class="row justify-content-center">
   <div class="col-4">
     <div class="card text-center">
@@ -7,7 +8,11 @@
       </div>
       <ul class="list-group list-group-flush">
         <p>AGE: <%= @student.age %></p>
+        <% if @student.cohort.nil? %>
+        <p>COHORT: N/A </p>
+        <% else %>
         <p>COHORT: <%= @student.cohort.name %></p>
+        <% end %>
       </ul>
       <div class="card-body">
         <%= link_to 'Edit', edit_student_path, class: "card-link" %>

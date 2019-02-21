@@ -6,7 +6,11 @@
         <h5 class="card-title"><%= @instructor.f_name %> <%= @instructor.l_name %></h5>
         <h6 class="card-subtitle mb-2"><%= @instructor.rank %></h6><br>
         <p>AGE: <%= @instructor.age %></p>
+        <% if @instructor.cohort.nil? %>
+        <p>COHORT: N/A </p>
+        <% else %>
         <p>COHORT: <%= @instructor.cohort.name %></p>
+        <% end %>
         <p>SALARY: <%= number_to_currency(@instructor.salary, precisiom: 0) %></p>
       </div>
       <div class="card-body">

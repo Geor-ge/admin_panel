@@ -14,3 +14,13 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+let table = document.getElementsByClassName('table');
+
+window.addEventListener('load', function(){
+  let th = document.getElementById("thead");
+  table[0].style = 'transition: .6s ease-in';
+  table[0].style.opacity = '1';
+  th.style = 'transition: .5s ease-in .6s'
+  th.style.backgroundColor = "rgba(111,195,223,.7)";
+});

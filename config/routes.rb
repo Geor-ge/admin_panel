@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+  root 'sessions#login'
 
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
