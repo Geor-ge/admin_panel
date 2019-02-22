@@ -15,12 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-let table = document.getElementsByClassName('table');
+const table = document.getElementsByClassName('table');
+const title = document.getElementsByTagName('h1');
 
-window.addEventListener('load', function(){
-  let th = document.getElementById("thead");
+
+window.addEventListener('load', function() {
+  const th = document.getElementById('thead');
   table[0].style = 'transition: .6s ease-in';
   table[0].style.opacity = '1';
-  th.style = 'transition: .5s ease-in .6s'
-  th.style.backgroundColor = "rgba(111,195,223,.7)";
+  title[0].style = 'transition: .875s ease-in';
+  title[0].style.opacity = '1';
+  th.style = 'transition: .5s ease-in .6s';
+  th.style.backgroundColor = "rgba(111,195,223,.8)";
 });

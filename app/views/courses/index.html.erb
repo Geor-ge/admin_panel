@@ -9,7 +9,7 @@
       <%= form_for (@course) do |f| %>
       <td><%= f.text_field :name %></td>
       <td><%= f.number_field :total_hours %></td>
-      <td colspan="3"><%= f.submit 'Add Course'%></td>
+      <td  class='button' colspan="3"><%= f.submit 'Add Course'%></td>
       <% end %>
     </tr>
     <% @courses.order(created_at: :desc).each do |c| %>

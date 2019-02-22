@@ -27,33 +27,44 @@
  }
 
 form{
+  font-size: 1.25em;
   margin-top: 10%;
 }
 
  nav a{
    color: #FFF;
    text-decoration: none;
- }
- nav a:hover{
-   text-shadow: 0px 0px 10px #000;
-   color: #FFF;
-   text-decoration: none;
+   transition: .8s ease;
  }
 
 .nav{
-  background-color: rgba(24,202,230,.8);
   margin-bottom: 50px;
+  border-bottom: 5px solid rgba(111,195,223, .9);
 }
 .nav-link{
-  color: #FFF;
   font-size: 1.25em;
+  background-color: rgba(0,0,0,0);
 }
 .nav-link:hover{
-  text-shadow: 0px 0px 10px #050D10;
+  background-color: rgba(111,195,223, .9);
+  text-shadow: 0px 0px 10px #000;
+  color: #FFF;
+  text-decoration: none;
+}
+
+input, select{
+  border: 2px solid rgb(255,255,255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgb(24,202,230);
+  background-color: rgba(0,0,0,0);
   color: #FFF;
 }
 
-#login-form{
+.button input{
+  animation: tron 4s ease infinite;
+}
+
+#login{
   margin-top: 50px;
   padding: 15px;
   height: auto;
@@ -63,34 +74,25 @@ form{
   text-shadow: 0px 0px 10px rgb(111,195,223);
   border: 3px solid rgba(24,202,230,1);
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #FFF;
+  box-shadow: 0px 0px 10px rgb(111,195,223);
 }
-#login-form input{
-  border: 3px solid rgba(24,202,230,.8);
+#login input{
+  border: 3px solid rgba(24,202,230);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
   background-color: rgba(0,0,0,0);
   color: #FFF;
 }
 
+h1{
+  opacity: 0;
+}
 .table{
   margin-top: 25px;
   border: 3px solid rgba(24,202,230,.8);
   box-shadow: 0px 0px 5px #FFF;
-  background-color: rgba(12,20,31,.8);
+  background-color: rgba(12,20,31, .8);
   opacity: 0;
-}
-input, select{
-  border: 2px solid rgb(255,255,255);
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgb(24,202,230);
-  background-color: rgba(0,0,0,0);
-  color: #FFF;
-}
-.table a{
-  color: rgb(255,255,255);
-  text-shadow: 0px 0px 5px rgb(223,116,12);
-  text-decoration: none;
 }
 
 tr{
@@ -100,14 +102,34 @@ tr:hover{
   background-color: rgba(111,195,223, .7);
 }
 
+.table a, .card a{
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: rgba(255,255,255);
+  text-decoration: none;
+  animation: clu 4s ease infinite;
+}
+
+@keyframes clu{
+  0%{text-shadow: 0px 0px 25px rgba(223,116,12,0);}
+  50%{text-shadow: 0px 0px 25px rgba(223,116,12,1);}
+  100%{text-shadow: 0px 0px 25px rgba(223,116,12,0);}
+}
+
+@keyframes tron{
+  0%{background-color: rgba(111,195,223,0);}
+  50%{background-color: rgba(24,202,230,.8);}
+  100%{background-color: rgba(111,195,223,0);}
+}
+
 .card{
   margin-top: 50px;
   padding: 10px;
   width: auto;
   height: auto;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.5);
   color: #FFF;
-  text-shadow: 0px 0px 5px rgb(24,202,230);
+  text-shadow: 0px 0px 10px rgb(24,202,230);
   border: 3px solid rgba(24,202,230,.8);
   border-radius: 5px;
   box-shadow: 0px 0px 10px #FFF;
@@ -115,8 +137,6 @@ tr:hover{
   z-index: 5;
   opacity: 1;
 }
-.card a{
-  color: rgb(255,255,255);
-  text-shadow: 0px 0px 5px rgb(223,116,12);
-  text-decoration: none;
+.card  a{
+  text-shadow: 0px 0px 10px rgba(223,116,12,1);
 }

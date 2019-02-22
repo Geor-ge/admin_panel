@@ -11,7 +11,7 @@
         <% else %>
         <p>COHORT: <%= @instructor.cohort.name %></p>
         <% end %>
-        <p>SALARY: <%= number_to_currency(@instructor.salary, precisiom: 0) %></p>
+        <p>SALARY: <%= number_to_currency(@instructor.salary, precision: 0) %></p>
       </div>
       <div class="card-body">
         <%= link_to 'Edit', edit_instructor_path, class: "card-link" %>

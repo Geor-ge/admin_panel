@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-3">
-    <h3><%= @cohort.name %></h3>
+    <h2><%= @cohort.name %></h2>
     <%= form_for(@cohort) do |f| %>
     <%= render partial: 'form', locals: {f: f} %>
-    <p><%= f.submit 'Edit Cohort' %></p>
+    <p class='button'><%= f.submit 'Edit Cohort' %></p>
     <% end %>
   </div>
 </div>
