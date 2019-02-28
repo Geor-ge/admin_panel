@@ -27,8 +27,9 @@
  }
 
 form{
-  font-size: 1.25em;
+  font-size: 1.125em;
   margin-top: 10%;
+  opacity: 0;
 }
 
  nav a{
@@ -65,7 +66,7 @@ input, select{
 }
 
 #login{
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 15px;
   height: auto;
   width: 25%;
@@ -75,19 +76,24 @@ input, select{
   border: 3px solid rgba(24,202,230,1);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
+
 }
 #login input{
-  border: 3px solid rgba(24,202,230);
+  border: 2px solid rgba(24,202,230);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
   background-color: rgba(0,0,0,0);
   color: #FFF;
 }
+#login form{
+  opacity: 1;
+}
 
-h1{
+h1, h2{
   opacity: 0;
 }
 .table{
+  color: #FFF;
   margin-top: 25px;
   border: 3px solid rgba(24,202,230,.8);
   box-shadow: 0px 0px 5px #FFF;
@@ -104,16 +110,16 @@ tr:hover{
 
 .table a, .card a{
   padding: 2px 5px;
+  color: #FFF;
   border-radius: 3px;
-  color: rgba(255,255,255);
   text-decoration: none;
   animation: clu 4s ease infinite;
 }
 
 @keyframes clu{
-  0%{text-shadow: 0px 0px 25px rgba(223,116,12,0);}
-  50%{text-shadow: 0px 0px 25px rgba(223,116,12,1);}
-  100%{text-shadow: 0px 0px 25px rgba(223,116,12,0);}
+  0%{text-shadow: 0px 0px 10px rgba(223,116,12,0)}
+  50%{text-shadow: 0px 0px 10px rgba(223,116,12,1)}
+  100%{text-shadow: 0px 0px 10px rgba(223,116,12,0)}
 }
 
 @keyframes tron{
@@ -135,7 +141,7 @@ tr:hover{
   box-shadow: 0px 0px 10px #FFF;
   font-size: 1.25em;
   z-index: 5;
-  opacity: 1;
+  opacity: 0;
 }
 .card  a{
   text-shadow: 0px 0px 10px rgba(223,116,12,1);

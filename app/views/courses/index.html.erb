@@ -17,8 +17,8 @@
       <td><%= c.name %></td>
       <td><%= number_with_delimiter(c.total_hours) %></td>
       <td><%= link_to 'Remove', c, method: :delete, remote: true, data: {confirm: "Click OK to remove #{c.name}"}  %></td>
-      <td><%= link_to 'Edit', edit_course_path(c.id) %></td>
-      <td><%= link_to 'Show', c %></td>
+      <td data-turbolinks="false"><%= link_to 'Edit', edit_course_path(c.id) %></td>
+      <td data-turbolinks="false"><%= link_to 'Show', c %></td>
     </tr>
     <% end %>
   </table>

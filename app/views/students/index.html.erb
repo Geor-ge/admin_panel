@@ -31,8 +31,8 @@
       <td>N/A</td>
       <% end %>
       <td><%= link_to 'Remove', s, method: :delete, remote: true, data: {confirm: "Click OK to remove #{s.f_name} #{s.l_name}"}  %></td>
-      <td><%= link_to 'Edit', edit_student_path(s.id) %></td>
-      <td><%= link_to 'Show', s %></td>
+      <td data-turbolinks="false"><%= link_to 'Edit', edit_student_path(s.id) %></td>
+      <td data-turbolinks="false"><%= link_to 'Show', s %></td>
     </tr>
     <% end %>
   </table>

@@ -3,24 +3,24 @@
     <div id="cohort-card" class="card-group">
       <div class="card text-center">
         <div class="card-body">
-            <h5><%= @cohort.name %></h5>
+            <h4><%= @cohort.name %></h4><br>
             <% if @cohort.instructor != nil %>
-            <p><%= @cohort.instructor.f_name %> <%= @cohort.instructor.l_name %></p>
+            <p>Instructor: <%= @cohort.instructor.f_name %> <%= @cohort.instructor.l_name %></p>
             <% end %>
             <p>Start Date: <%= @cohort.start_date %></p>
-            <p>End Date: <%= @cohort.end_date %></p>
-            <%= link_to 'Edit', edit_cohort_path, class: 'card-link' %>
+            <p>End Date: <%= @cohort.end_date %></p><br>
+            <%= link_to 'Edit', edit_cohort_path, remote: false, data: {turbolinks: 'false'}, class: 'card-link' %>
             <%= link_to 'Remove Cohort', @cohort, class: 'card-link', method: :delete, remote: true, data: {confirm: "Click OK to remove #{@cohort.name}"} %>
         </div>
       </div>
       <% if @cohort.students != nil %>
       <div class="card text-center">
         <div class="card-body">
-          <div class="card-header">
+          <h4>
             Students
-          </div>
+          </h4><br>
             <% @cohort.students.each do |s| %>
-            <a href="/students/<%=s.id%>"><span><%= s.f_name %> <%= s.l_name %></span></a><br>
+            <a data-turbolinks="false" href="/students/<%=s.id%>"><span><%= s.f_name %> <%= s.l_name %></span></a><br>
             <% end %>
         </div>
       </div>

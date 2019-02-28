@@ -3,18 +3,20 @@
   <div class="col-4">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title"><%= @instructor.f_name %> <%= @instructor.l_name %></h5>
-        <h6 class="card-subtitle mb-2"><%= @instructor.rank %></h6><br>
-        <p>AGE: <%= @instructor.age %></p>
-        <% if @instructor.cohort.nil? %>
-        <p>COHORT: N/A </p>
-        <% else %>
-        <p>COHORT: <%= @instructor.cohort.name %></p>
-        <% end %>
-        <p>SALARY: <%= number_to_currency(@instructor.salary, precision: 0) %></p>
-      </div>
+        <h4 class="card-title"><%= @instructor.f_name %> <%= @instructor.l_name %></h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <p>Rank: <%= @instructor.rank %></p>
+          <p>Age: <%= @instructor.age %></p>
+          <% if @instructor.cohort.nil? %>
+          <p>Cohort: N/A </p>
+          <% else %>
+          <p>Cohort: <%= @instructor.cohort.name %></p>
+          <% end %>
+          <p>Salary: <%= number_to_currency(@instructor.salary, precision: 0) %></p>
+        </ul>
       <div class="card-body">
-        <%= link_to 'Edit', edit_instructor_path, class: "card-link" %>
+        <%= link_to 'Edit', edit_instructor_path, data: {turbolinks: 'false'}, class: "card-link" %>
         <%= link_to 'Remove Instructor', @instructor, class: "card-link", method: :delete, remote: true, data: {confirm: "Click OK to remove #{@instructor.f_name} #{@instructor.l_name}"}  %>
       </div>
     </div>

@@ -3,19 +3,19 @@
   <div class="col-4">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title"><%= @student.f_name %> <%= @student.l_name %></h5>
-        <h6 class="card-subtitle mb-2"><%= @student.rank %></h6>
+        <h4 class="card-title"><%= @student.f_name %> <%= @student.l_name %></h4>
       </div>
       <ul class="list-group list-group-flush">
-        <p>AGE: <%= @student.age %></p>
+        <p>Rank: <%= @student.rank %></p>
+        <p>Age: <%= @student.age %></p>
         <% if @student.cohort.nil? %>
-        <p>COHORT: N/A </p>
+        <p>Cohort: N/A </p>
         <% else %>
-        <p>COHORT: <%= @student.cohort.name %></p>
+        <p>Cohort: <%= @student.cohort.name %></p>
         <% end %>
       </ul>
       <div class="card-body">
-        <%= link_to 'Edit', edit_student_path, class: "card-link" %>
+        <%= link_to 'Edit', edit_student_path, data: {turbolinks: 'false'}, class: "card-link" %>
         <%= link_to 'Remove Student', @student, class: "card-link", method: :delete, remote: true, data: {confirm: "Click OK to remove #{@student.f_name} #{@student.l_name}"}  %>
       </div>
     </div>

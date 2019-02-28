@@ -2,11 +2,11 @@
   <div class="col-4">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title"><%= @course.name %> </h5>
+        <h4 class="card-title"><%= @course.name %> </h4>
       </div>
         <p>Total Hours: <%= @course.total_hours %></p>
       <div class="card-body">
-        <%= link_to 'Edit', edit_course_path, class: "card-link" %>
+        <%= link_to 'Edit', edit_course_path, data: {turbolinks: 'false'}, class: "card-link" %>
         <%= link_to 'Remove Course', @course, class: "card-link", method: :delete, remote: true, data: {confirm: "Click OK to remove #{@course.name}"} %>
       </div>
     </div>
