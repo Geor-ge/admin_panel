@@ -15,14 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-var title = document.getElementsByTagName('h1');
-var smTitle = document.getElementsByTagName('h2');
-var form = document.getElementsByTagName('form');
-var table = document.getElementsByClassName('table');
-var card = document.getElementsByClassName('card');
-var i = 0;
+const title = document.getElementsByTagName('h1');
+const smTitle = document.getElementsByTagName('h2');
+const form = document.getElementsByTagName('form');
+const table = document.getElementsByClassName('table');
+const card = document.getElementsByClassName('card');
+let i = 0;
 
-var homePage = () => {
+const homePage = () => {
   setTimeout(function(){
     welcome = document.getElementById('welcome');
     welcomeText = 'Welcome To The Admin Panel. Please Enter Your Username & Password.';
@@ -32,14 +32,14 @@ var homePage = () => {
       homePage();
     }
   }, 60);
-  var login = document.getElementById('login');
+  const login = document.getElementById('login');
   login.style = 'transition: .5s ease-in 4s';
   login.style.opacity = 1;
 }
 window.addEventListener('load', homePage);
 //table load event
 window.addEventListener('load', function() {
-  var th = document.getElementById('thead');
+  const th = document.getElementById('thead');
   title[0].style = 'transition: .875s ease-in';
   title[0].style.opacity = '1';
   table[0].style = 'transition: .6s ease-in';
