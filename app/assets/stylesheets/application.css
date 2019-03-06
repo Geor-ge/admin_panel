@@ -93,7 +93,7 @@ input, select{
 #login input{
   width: 90%;
   height: auto;
-  border: 2px solid rgba(24,202,230);
+  border: 2px solid rgb(24,202,230);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
   background-color: rgba(0,0,0,0);
