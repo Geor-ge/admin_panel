@@ -4,10 +4,10 @@ class StudentsController < ApplicationController
     if session[:user_id] == nil
       redirect_to '/login'
     else
-     @students = Student.all
-     @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
-     @student = Student.new
-   end
+      @students = Student.all
+      @ranks = ["Blue-Belt", "Purple-Belt", "Brown-Belt", "Black-Belt"]
+      @student = Student.new
+    end
   end
 
   def new
@@ -31,6 +31,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+
   end
 
   def edit
@@ -48,8 +49,8 @@ class StudentsController < ApplicationController
       redirect_to @student
     else
       render 'edit'
+    end
   end
-end
 
   def destroy
     @student = Student.find(params[:id])

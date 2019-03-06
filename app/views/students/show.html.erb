@@ -15,8 +15,7 @@
         <% end %>
       </ul>
       <div class="card-body">
-        <%= link_to 'Edit', edit_student_path, data: {turbolinks: 'false'}, class: "card-link" %>
-        <%= link_to 'Remove Student', @student, class: "card-link", method: :delete, remote: true, data: {confirm: "Click OK to remove #{@student.f_name} #{@student.l_name}"}  %>
+        <%= link_to 'Edit Student Info', edit_student_path, data: {turbolinks: 'false'}, class: "card-link" %>
       </div>
     </div>
   </div>

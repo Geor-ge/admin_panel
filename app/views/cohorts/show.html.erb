@@ -9,8 +9,7 @@
             <% end %>
             <p>Start Date: <%= @cohort.start_date %></p>
             <p>End Date: <%= @cohort.end_date %></p><br>
-            <%= link_to 'Edit', edit_cohort_path, remote: false, data: {turbolinks: 'false'}, class: 'card-link' %>
-            <%= link_to 'Remove Cohort', @cohort, class: 'card-link', method: :delete, remote: true, data: {confirm: "Click OK to remove #{@cohort.name}"} %>
+            <%= link_to 'Edit Cohort', edit_cohort_path, remote: false, data: {turbolinks: 'false'}, class: 'card-link' %>
         </div>
       </div>
       <% if @cohort.students != nil %>

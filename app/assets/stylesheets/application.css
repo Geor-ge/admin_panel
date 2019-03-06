@@ -1,19 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- body{
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+body{
   font-family: 'Share Tech Mono', monospace;
   position: absolute;
   height: 100%;
@@ -24,7 +24,7 @@
   background-repeat: no-repeat;
   z-index: 1;
   color: #FFF;
- }
+}
 
 form{
   font-size: 1.125em;
@@ -32,11 +32,11 @@ form{
   opacity: 0;
 }
 
- nav a{
-   color: #FFF;
-   text-decoration: none;
-   transition: .8s ease;
- }
+nav a{
+  color: #FFF;
+  text-decoration: none;
+  transition: .8s ease;
+}
 
 .nav{
   margin-bottom: 50px;
@@ -65,8 +65,15 @@ input, select{
   animation: tron 4s ease infinite;
 }
 
+#welcome{
+  margin-top: 25px;
+  text-align: left;
+}
+
 #login{
-  margin-top: 100px;
+  position: relative;
+  left: 37.5%;
+  margin-top: 75px;
   padding: 15px;
   height: auto;
   width: 25%;
@@ -76,9 +83,16 @@ input, select{
   border: 3px solid rgba(24,202,230,1);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
-
+  opacity: 0;
+}
+#login .button{
+  position: relative;
+  left: 25%;
+  width: 50%;
 }
 #login input{
+  width: 90%;
+  height: auto;
   border: 2px solid rgba(24,202,230);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(111,195,223);
@@ -93,11 +107,11 @@ h1, h2{
   opacity: 0;
 }
 .table{
-  color: #FFF;
   margin-top: 25px;
+  background-color: rgba(0,0,0,.6);
+  color: #FFF;
   border: 3px solid rgba(24,202,230,.8);
   box-shadow: 0px 0px 5px #FFF;
-  background-color: rgba(12,20,31, .8);
   opacity: 0;
 }
 
