@@ -103,6 +103,6 @@ Rails.application.configure do
     config.dsn = ENV['SENTRY_DSN']
   end
 
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
 end
