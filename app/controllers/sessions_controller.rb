@@ -12,9 +12,10 @@ class SessionsController < ApplicationController
     if params[:user_name] == admin.user_name
       if admin.authenticate(params[:password])
         session[:user_id] = admin.id
-        print session
         redirect_to '/cohorts'
       end
+    else
+      render 'login'
     end
   end
 
