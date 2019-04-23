@@ -19,6 +19,9 @@ class StudentsController < ApplicationController
   end
 
   def create
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @student = Student.new(student_params)
     if @student.save
       flash[:success] = "Student added to roster."
@@ -30,6 +33,9 @@ class StudentsController < ApplicationController
   end
 
   def show
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @student = Student.find(params[:id])
 
   end
@@ -44,6 +50,9 @@ class StudentsController < ApplicationController
 
 
   def update
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @student = Student.find(params[:id])
     if @student.update(student_params)
       redirect_to @student
@@ -53,6 +62,9 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @student = Student.find(params[:id])
     if @student.destroy
       respond_to do |format|

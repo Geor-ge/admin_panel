@@ -20,6 +20,9 @@ class InstructorsController < ApplicationController
   end
 
   def create
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
       redirect_to '/instructors'
@@ -28,6 +31,9 @@ class InstructorsController < ApplicationController
   end
 
   def show
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.find(params[:id])
   end
 
@@ -40,6 +46,9 @@ class InstructorsController < ApplicationController
   end
 
   def update
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.find(params[:id])
     if @instructor.update(instructor_params)
       redirect_to '/instructors'
@@ -47,6 +56,9 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @instructor = Instructor.find(params[:id])
     if @instructor.destroy
       respond_to do |format|

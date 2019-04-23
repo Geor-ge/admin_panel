@@ -19,6 +19,9 @@ class CohortsController < ApplicationController
   end
 
   def create
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
       redirect_to '/cohorts'
@@ -27,6 +30,9 @@ class CohortsController < ApplicationController
 
 
   def show
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @cohort = Cohort.find(params[:id])
   end
 
@@ -39,6 +45,9 @@ class CohortsController < ApplicationController
   end
 
   def update
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     @cohort = Cohort.find(params[:id])
     if @cohort.update(cohort_params)
       redirect_to '/cohorts'
@@ -48,6 +57,9 @@ class CohortsController < ApplicationController
   end
 
   def destroy
+    if session[:user_id] == nil
+      redirect_to '/login'
+    end
     cohort = Cohort.find(params[:id])
     instructor = cohort.instructor
     if cohort.destroy
