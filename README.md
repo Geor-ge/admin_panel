@@ -1,4 +1,4 @@
-https://mighty-basin-87868.herokuapp.com/
+https://tron-dashboard.herokuapp.com/
 
 #### Login Credentials
 `User Name: admin`
